@@ -12,7 +12,7 @@ generate_base_map(username)
 
 replace_commits_with_symbol(
     base_svg_path=Path("assets/contributions.svg"),
-    symbol_svg_path=Path("assets/flower.svg"),
+    symbol_svg_path=Path("assets/footprint.svg"),
     scale_factor=1.0
 )
 
