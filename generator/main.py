@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-from generate_svg import generate_base_map, replace_commits_with_symbol, change_text_color, add_commit_animation
+from generate_svg import generate_base_map, replace_commits_with_symbol, change_text_color, add_commit_animation, make_empty_days_transparent
 
 if len(sys.argv) < 2:
     print("Usage: python generator/main.py <github_username>")
@@ -19,6 +19,10 @@ replace_commits_with_symbol(
 change_text_color(
     svg_path=Path("assets/contributions.svg"),
     new_color="#740001"
+)
+
+make_empty_days_transparent(
+    Path("assets/contributions.svg")
 )
 
 add_commit_animation(
