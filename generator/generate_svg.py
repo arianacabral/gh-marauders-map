@@ -179,3 +179,25 @@ def add_commit_animation(svg_path: Path, step_seconds=0.25):
     tree.write(svg_path, encoding="utf-8", xml_declaration=True)
 
     print("✔ Animation added")
+
+def make_empty_days_transparent(svg_path: Path):
+    tree = ET.parse(svg_path)
+    root = tree.getroot()
+
+    rects = root.findall(".//{*}rect")
+
+    changed = 0
+
+    for rect in rects:
+        fill = extract_fill(rect)
+
+        if fill and fill in EMPTY_COLORS:
+            if "style" in rect.attrib:
+                del rect.attrib["style"]
+
+            rect.set("fill", "none")
+            changed += 1
+
+    tree.write(svg_path, encoding="utf-8", xml_declaration=True)
+
+    print(f"✔ {changed} empty days set to transparent")
