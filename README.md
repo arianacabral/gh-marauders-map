@@ -2,6 +2,6 @@
 
 > I solemnly swear that I am up to no good — just committing
 
-This project generates a customized version of your GitHub contributions graph.
+Transform your GitHub profile contribution graph into a Marauder’s Map-style visualization.
 
-![Marauder's Map](assets/contributions.svg)
+<img src="assets/contributions.svg" alt="Marauder's Map" width="100%" height="auto" />
